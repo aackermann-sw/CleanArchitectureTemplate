@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Switch.CleanArchitecture.Template</id>
+    <id>3ce9988f-b03f-4000-b1c5-2ddd0f32c6a6</id>
     <title>Switch.CleanArchitecture.Template</title>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
     <authors>Agustin Ackermann</authors>
     <description>
       .NET Core template using CleanArchitecture.
     </description>
     <language>en-US</language>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/ardalis/CleanArchitecture</projectUrl>
+    <projectUrl>https://github.com/aackermann-sw/CleanArchitectureTemplate</projectUrl>
     <releaseNotes>Updated to ASP.NET 5.0.10 dependencies</releaseNotes>
     <packageTypes>
       <packageType name="Template" />
@@ -19,6 +19,6 @@
     <icon>./content/icon.png</icon>
   </metadata>
   <files>
-    <file src=".\**" target="content" exclude="**\bin\**;**\obj\**;**\.git\**;**\.github\**;**\*.user;**\.vs\**;**\.vscode\**" />
+    <file src="..\**" target="content" exclude="**\bin\**;**\obj\**;**\.git\**;**\.github\**;**\*.user;**\.vs\**;**\.vscode\**" />
   </files>
 </package>
