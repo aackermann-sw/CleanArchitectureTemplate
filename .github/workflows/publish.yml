@@ -4,7 +4,7 @@ on:
     branches:
       - main # Your default release branch
     paths:
-      - 'CleanArchitecture.nuspec'
+      - 'server/CleanArchitecture.nuspec'
 jobs:
   publish:
     name: list on nuget
@@ -14,7 +14,7 @@ jobs:
 
       - uses: nuget/setup-nuget@v1
         with:
-          nuget-version: '5.x'
+          nuget-version: '1.x'
           
       - name: Package the template
         run: nuget pack CleanArchitecture.nuspec
