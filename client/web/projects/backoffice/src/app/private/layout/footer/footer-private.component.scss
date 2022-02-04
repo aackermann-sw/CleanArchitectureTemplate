@@ -1,0 +1,74 @@
+
+@import "variables";
+
+
+/* ////////// Container ////////// */
+
+.footer_private {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  color: $colorMain_light;
+  background-color: $colorBkg;
+}
+
+/* ////////// Button ////////// */
+
+.footerBtn {
+  display: inline-block;
+  margin: 0 1rem 0 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-family: Heebo, sans-serif;
+  font-size: .75rem;
+  font-weight: bold;
+  color: $colorMain_light;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  transition: color 200ms, box-shadow 200ms;
+}
+.footerBtn:hover {
+  color: $colorMain;
+}
+.footerBtn:focus {
+  box-shadow: 0 0 0 2px $colorMain_shadow;
+  outline: none;
+}
+
+/* ////////// Brand ////////// */
+
+.productBrand {
+  display: flex;
+  align-items: center;
+  font-size: .75rem;
+}
+.productBrand__img {
+  height: 1.125rem;
+  margin-left: .5rem;
+}
+
+.footerCopyright {
+  font-size: .75rem;
+}
+
+/* ////////// Responsive ////////// */
+
+@media (max-width: $mediaqueryM) {
+  .footer_private {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footerBtn {
+    margin: 0 1rem 1rem 0;
+  }
+
+  .productBrand {
+    margin-top: 1rem;
+  }
+}

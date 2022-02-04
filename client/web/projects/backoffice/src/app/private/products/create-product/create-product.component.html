@@ -1,0 +1,138 @@
+
+<form [formGroup]="form" (ngSubmit)="onSave()">
+  <sw-page-head
+    [fixed]="true"
+    [subtitle]="(productId ? 'PRODUCTS.CONTROL_PANEL_EDIT' : 'PRODUCTS.CONTROL_PANEL_NEW') | translate"
+    [title]="(productId ? 'PRODUCTS.EDIT.TITLE' : 'PRODUCTS.NEW') | translate"
+  >
+    <button type="submit" [disabled]="isSubmitting" class="button button_colorSuccess button_load button_full_s submitBtn">
+      <span *ngIf="!isSubmitting">
+        <i class="mdi {{ productId ? 'mdi-content-save' : 'mdi-check' }} buttonIcon_right"></i>
+        {{ (productId ? 'GENERAL.SAVE' : 'GENERAL.CREATE') | translate }}
+      </span>
+      <span *ngIf="isSubmitting"><i class="mdi mdi-loading mdi-spin"></i></span>
+    </button>
+    <button type="button" class="button button_outline" [routerLink]="['/private', 'products']">
+      {{ 'GENERAL.CANCEL' | translate }}
+    </button>
+    <small class="requiredFieldsInstructions">{{ 'PRODUCTS.FIELDS_REQUIRED' | translate }}</small>
+  </sw-page-head>
+
+  <div class="container productCont">
+    <div class="row">
+      <div class="col_12 col_lg_6">
+        <!-- barcode -->
+        <div class="inputCont">
+          <label class="label label_bold" for="productbarcode"
+            >{{ 'PRODUCTS.DATA.BARCODE' | translate }} {{ 'PRODUCTS.REQUIRED_MARK' | translate }}</label
+          >
+          <input
+            (blur)="onBlur('barcode')"
+            id="productbarcode"
+            type="text"
+            pInputText
+            formControlName="barcode"
+            maxlength="200"
+            placeholder="{{ 'PRODUCTS.DATA.BARCODE' | translate }}"
+            aria-describedby="productbarcode_errorMsg"
+          />
+          <small
+            *ngIf="form.controls.barcode.invalid && (form.controls.barcode.dirty || form.controls.barcode.touched)"
+            class="p-error"
+            id="productbarcode_errorMsg"
+          >
+            <span *ngIf="form.controls.barcode.errors?.required">
+              {{ 'PRODUCTS.DATA.ERROR.BARCODE_REQUIRED' | translate }}
+            </span>
+            <span *ngIf="form.controls.barcode.errors?.maxlength">
+              {{ 'PRODUCTS.DATA.ERROR.BARCODE_TO_LONG' | translate }}
+            </span>
+          </small>
+        </div>
+
+        <!-- name -->
+        <div class="inputCont">
+          <label class="label label_bold" for="productname">{{ 'PRODUCTS.DATA.NAME' | translate }} {{ 'PRODUCTS.REQUIRED_MARK' | translate }}</label>
+          <input
+            (blur)="onBlur('name')"
+            id="productname"
+            type="text"
+            maxlength="200"
+            pInputText
+            formControlName="name"
+            placeholder="{{ 'PRODUCTS.DATA.NAME' | translate }}"
+            aria-describedby="productname_errorMsg"
+          />
+          <small
+            *ngIf="form.controls.name.invalid && (form.controls.name.dirty || form.controls.name.touched)"
+            class="p-error"
+            id="productname_errorMsg"
+          >
+            <span *ngIf="form.controls.name.errors?.maxlength">
+              {{ 'PRODUCTS.DATA.ERROR.NAME_TO_LONG' | translate }}
+            </span>
+            <span *ngIf="form.controls.name.errors?.required">
+              {{ 'PRODUCTS.DATA.ERROR.NAME_REQUIRED' | translate }}
+            </span>
+          </small>
+        </div>
+
+        <!-- rate -->
+        <div class="inputCont">
+          <label class="label label_bold" for="productrate">{{ 'PRODUCTS.DATA.RATE' | translate }} {{ 'PRODUCTS.REQUIRED_MARK' | translate }}</label>
+          <input
+            (blur)="onBlur('rate')"
+            id="productrate"
+            type="text"
+            maxlength="200"
+            pInputText
+            formControlName="rate"
+            placeholder="{{ 'PRODUCTS.DATA.RATE' | translate }}"
+            aria-describedby="productrate_errorMsg"
+          />
+          <small
+            *ngIf="form.controls.rate.invalid && (form.controls.rate.dirty || form.controls.rate.touched)"
+            class="p-error"
+            id="productrate_errorMsg"
+          >
+            <span *ngIf="form.controls.rate.errors?.maxlength">
+              {{ 'PRODUCTS.DATA.ERROR.RATE_TO_LONG' | translate }}
+            </span>
+            <span *ngIf="form.controls.rate.errors?.required">
+              {{ 'PRODUCTS.DATA.ERROR.RATE_REQUIRED' | translate }}
+            </span>
+          </small>
+        </div>
+
+        <!-- description -->
+        <div class="inputCont">
+          <label class="label label_bold" for="productdescription">{{ 'PRODUCTS.DATA.DESCRIPTION' | translate }} {{ 'PRODUCTS.REQUIRED_MARK' | translate }}</label>
+          <input
+            (blur)="onBlur('description')"
+            id="productdescription"
+            type="text"
+            maxlength="200"
+            pInputText
+            formControlName="description"
+            placeholder="{{ 'PRODUCTS.DATA.DESCRIPTION' | translate }}"
+            aria-describedby="productdescription_errorMsg"
+          />
+          <small
+            *ngIf="form.controls.description.invalid && (form.controls.description.dirty || form.controls.description.touched)"
+            class="p-error"
+            id="productdescription_errorMsg"
+          >
+            <span *ngIf="form.controls.description.errors?.maxlength">
+              {{ 'PRODUCTS.DATA.ERROR.DESCRIPTION_TO_LONG' | translate }}
+            </span>
+            <span *ngIf="form.controls.description.errors?.required">
+              {{ 'PRODUCTS.DATA.ERROR.DESCRIPTION_REQUIRED' | translate }}
+            </span>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+

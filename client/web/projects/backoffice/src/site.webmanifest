@@ -1,0 +1,20 @@
+{
+    "name": "tsp Advisors",
+    "short_name": "tsp",
+    "description": "A Boutique M&A advisory firm tailored to the logistics industry and the people who built it.",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png?v=2",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png?v=2",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}

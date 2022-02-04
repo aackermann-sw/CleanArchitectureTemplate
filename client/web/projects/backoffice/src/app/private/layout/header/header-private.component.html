@@ -1,0 +1,59 @@
+<header class="header" id="mainHeader">
+  <div class="headerTitleCont">
+    <div class="mobileMenuBtnCont" #mobileMenuItem>
+      <button
+        class="btnHeader headerNavBtn headerNavBtn_circle headerNavBtn_mobileMenu"
+        title="{{ 'HEADER.MENU' | translate }}"
+        (click)="headerMobileMenuDropdown.toggle($event)"
+      >
+        <i class="mdi mdi-menu headerNavBtn__icon"></i>
+      </button>
+    </div>
+    <h1 class="headerTitle">
+      <button (click)="goToPage('private/home')" class="btnHeader headerTitle__btn">
+        <img
+          src="assets/images/logos/tspLogo.png"
+          alt="{{ 'GENERAL.COMPANY_NAME_PLACEHOLDER' | translate }}"
+          class="headerTitle__logo"
+        />
+        <span class="headerTitle__text">{{ 'HEADER.TITLE' | translate }}</span>
+      </button>
+    </h1>
+  </div>
+
+  <nav class="headerNav">
+    <button (click)="goToPage('private/products')" class="btnHeader headerNavBtn headerBtn">
+      <i class="mdi mdi-file-document-outline headerNavBtn__icon"></i>
+      <span class="headerTitle__text">{{ 'PRODUCTS.TITLE' | translate }}</span>
+    </button>
+
+    <div #profileMenuItem class="headerNavEnd">
+      <button class="btnHeader headerNavBtn headerNavBtn_circle" (click)="headerProfileDropdown.toggle($event)">
+        <i class="mdi mdi-account-outline headerNavBtn__icon"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<p-overlayPanel #headerProfileDropdown [appendTo]="profileMenuItem" [styleClass]="'headerDropdown'">
+  <ul class="dropdownList">
+    <li>
+      <div class="dropdownList__user"><i class="mdi mdi-account-outline dropdownList__btn__icon"></i>{{ userEmail }}</div>
+    </li>
+    <li>
+      <button class="dropdownList__btn dropdownList__btn_borderTop dropdownList__btn_last" (click)="logout()">
+        <i class="mdi mdi-logout dropdownList__btn__icon"></i>Log out
+      </button>
+    </li>
+  </ul>
+</p-overlayPanel>
+
+<p-overlayPanel #headerMobileMenuDropdown [appendTo]="mobileMenuItem" [styleClass]="'headerDropdown'">
+  <ul class="dropdownList">
+    <li>
+      <button (click)="goToPage('private/products')" class="dropdownList__btn dropdownList__btn_borderTop">
+        <i class="mdi mdi-file-document-outline dropdownList__btn__icon"></i>{{ 'PRODUCTS.TITLE' | translate }}
+      </button>
+    </li>
+  </ul>
+</p-overlayPanel>

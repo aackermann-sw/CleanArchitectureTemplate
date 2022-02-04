@@ -1,0 +1,120 @@
+
+<sw-page-head
+  [subtitle]="'PRODUCTS.CONTROL_PANEL' | translate"  
+  [title]="'PRODUCTS.TITLE' | translate"
+>
+  <button class="button button_colorSuccess button_shadow" (click)="goToCreateElement()" id="goToCreate">
+    <i class="mdi mdi-plus buttonIcon_right"></i> {{ 'PRODUCTS.NEW' | translate }}
+  </button>
+</sw-page-head>
+
+<div class="progress-spinner" *ngIf="tableLoading$ | async">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+
+<div class="container paddingTop_2">
+  <div class="row contentTop">
+
+
+    <div class="col_12 col_lg_4 searchContainer">
+      <div class="inputCont_iconLeft">
+        <label for="productsListSearch" class="srOnly">{{ 'GENERAL.SEARCH' | translate }}</label>
+        <input [formControl]="filterTitleControl" type="text" pInputText id="productsListSearch" [placeholder]="'GENERAL.SEARCH' | translate"/>
+        <i class="iconLeft mdi mdi-magnify"></i>
+      </div>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col paddingBottom_2">
+      <p-table
+        [rows]='10' 
+        [lazy]="true"
+        [paginator]='true' 
+        [rowsPerPageOptions]='[10,50,100]'
+        [value]="products$ | async"
+        [responsive]="true"
+        [loading]="tableLoading$ | async"
+        [showLoader]="false"
+        [showCurrentPageReport]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} results"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="barcode">
+              {{ 'PRODUCTS.DATA.BARCODE' | translate }} <p-sortIcon field="barcode"></p-sortIcon>
+            </th>
+            <th pSortableColumn="name">
+              {{ 'PRODUCTS.DATA.NAME' | translate }} <p-sortIcon field="name"></p-sortIcon>
+            </th>
+            <th pSortableColumn="description">
+              {{ 'PRODUCTS.DATA.DESCRIPTION' | translate }} <p-sortIcon field="description"></p-sortIcon>
+            </th>
+            <th pSortableColumn="rate">
+              {{ 'PRODUCTS.DATA.RATE' | translate }} <p-sortIcon field="rate"></p-sortIcon>
+            </th>
+            <th class="buttonCell">
+              <span class="srOnly">{{ 'GENERAL.ACTIONS' | translate }}</span>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-element>
+          <tr>
+            <td>
+              <span>{{ element.barcode }}</span>
+            </td>
+            <td>
+              <span>{{ element.name}}</span>
+            </td>
+            <td>
+              <span>{{ element.description}}</span>
+            </td>
+            <td>
+              <span>{{ element.rate}}</span>
+            </td>
+            <td class="buttonCell buttonCell_mobileTop">
+              <button
+                class="button button_round"
+                (click)="showElementOptions($event, element)"
+                title="{{ 'GENERAL.ACTIONS' | translate }}"
+              >
+                <i class="mdi mdi-dots-vertical"></i>
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td class="emptyTableMsg" [attr.colspan]="5">
+              <i class="mdi mdi-information"></i>
+              {{ 'PRODUCTS.TABLE.NO_PRODUCTS' | translate }}
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="loadingbody" let-columns="columns">
+          <tr>
+            <td class="emptyTableMsg" [attr.colspan]="5">
+              <i class="mdi mdi-loading mdi-spin"></i>
+              {{ 'PRODUCTS.TABLE.LOADING_PRODUCTS' | translate }}
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
+
+<p-overlayPanel #rowActionsDropdown [appendTo]="'body'" [styleClass]="'dropdown'">
+  <ul class="dropdownList dropdownList_margin">
+    <li>
+      <button (click)="goToEditElement()" class="dropdownList__btn">
+        <i class="mdi mdi-pencil dropdownList__btn__icon"></i>{{ 'GENERAL.EDIT' | translate }}
+      </button>
+    </li>
+    <li>
+      <button class="dropdownList__btn dropdownList__btn_danger" (click)="showDeleteElementDialog()">
+        <i class="mdi mdi-trash-can dropdownList__btn__icon"></i>{{ 'GENERAL.DELETE' | translate }}
+      </button>
+    </li>
+  </ul>
+</p-overlayPanel>

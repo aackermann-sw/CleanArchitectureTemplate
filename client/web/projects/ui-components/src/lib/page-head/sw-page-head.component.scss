@@ -1,0 +1,199 @@
+@import 'variables.scss';
+
+/* ////////// Container ////////// */
+
+.pageHead {
+  width: 100%;
+  padding: 2rem 0;
+  background-color: $colorBkg;
+}
+
+/* ////////// Fixed ////////// */
+
+.pageHead_fixed.pageHead {
+  z-index: 900;
+}
+
+/* ////////// Grid ////////// */
+
+.pageHeadContainer {
+  width: 100%;
+  max-width: $containerWidthL;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.pageHeadRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 4rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+/* ////////// Start ////////// */
+
+.pageHeadStartCol {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0 1rem;
+  max-width: 100%;
+}
+
+.pageHeadIcon {
+  margin-right: 0.75rem;
+  font-size: 1.5rem;
+  color: $colorMain;
+}
+.pageHeadIcon__btn {
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  width: 1.625rem;
+  height: 1.625rem;
+  padding: 0;
+  border-radius: 1000px;
+}
+
+.pageHeadTitleCont {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+.pageHeadTitleWrap {
+  margin: 0;
+}
+.pageHeadSubtitle {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: $colorMain_light;
+}
+.pageHeadTitle {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 2rem;
+  color: $colorMain;
+}
+
+.pageHeadTitle__icon {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+}
+.pageHeadInputCont {
+  position: relative;
+}
+:host ::ng-deep .p-inputtext.pageHeadInput {
+  position: relative;
+  left: -0.5rem;
+  padding: 0.375rem 0.5rem;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.p-error_tooltip {
+  left: -0.5rem;
+}
+
+/* ////////// End ////////// */
+
+.pageHeadEndCol {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 100%;
+  padding: 0.5rem 1rem;
+}
+.pageHeadEndCol:empty {
+  display: none;
+}
+
+/* ////////// Icon picker Modal ////////// */
+
+.iconPickerList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 480px;
+  margin: 0 -0.25rem 2rem -0.25rem;
+  padding: 0;
+  list-style-type: none;
+}
+.iconPickerItem {
+  position: relative;
+  width: auto;
+  flex-shrink: 0;
+  padding: 0.25rem;
+}
+
+.iconPickerItem .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0;
+  font-size: 1.5rem;
+  appearance: none;
+  line-height: 1;
+  color: $colorText;
+
+  &:checked {
+    border-color: $colorMain;
+    color: white;
+    background-color: $colorMain;
+
+    &:focus {
+      box-shadow: 0 0 0 3px $colorMain_shadow;
+    }
+  }
+  &:checked + i {
+    color: white;
+  }
+}
+
+.iconPickerItem i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: $colorText;
+  transition: color 200ms;
+  pointer-events: none;
+}
+
+.modalFoot .button .mdi {
+  margin-right: 0.5rem;
+}
+
+/* ////////// Responsive ////////// */
+
+@media screen and (max-width: $mediaqueryM) {
+  .pageHeadStartCol {
+    width: 100%;
+  }
+  .pageHeadTitleCont {
+    width: calc(100% - 3.5rem);
+  }
+
+  .pageHeadEndCol {
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  /* // Icon picker Modal // */
+
+  .createElementRow {
+    flex-direction: column-reverse;
+  }
+}

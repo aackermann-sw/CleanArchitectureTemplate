@@ -1,0 +1,91 @@
+<div class="bkgCont" style="background-image: url('../../../assets/images/pictures/authBkg_desktop.jpg')">
+  <img class="environmentLabel" alt="" src="../../../assets/images/environmentLabels/environment_label.png" />
+
+  <main class="card authCard">
+    <h1 class="cardHead authCardHead">
+      <img src="../../../assets/images/logos/tspLogo.png" alt="tsp Advisors" class="authCardLogo" />
+      <span class="authCardSubtitle">Administrator</span>
+    </h1>
+    <form [formGroup]="authForm" class="cardBody" (ngSubmit)="login()">
+      <h2 class="cardTitle">{{ 'LOGIN.TITLE' | translate }}</h2>
+
+      <div class="alert alert_danger marginBottom_2" style="display: none">
+        <i class="mdi mdi-close-octagon alert__icon"></i>
+        <div>
+          <h3 class="alert__title">Invalid email/password</h3>
+          <p class="alert__text">Please check your credentials and try again.</p>
+        </div>
+      </div>
+
+      <div class="inputCont">
+        <label for="loginEmail" class="label">{{ 'LOGIN.EMAIL' | translate }}</label>
+        <input
+          (blur)="onBlur('email')"
+          type="email"
+          id="loginEmail"
+          maxlength="256"
+          formControlName="email"
+          placeholder="{{ 'LOGIN.EXAMPLE' | translate }}"
+          class="input"
+          aria-describedby="loginEmail_errorMsg"
+          pInputText
+        />
+        <small *ngIf="emailCtrl?.invalid && (emailCtrl?.dirty || emailCtrl?.touched)" id="loginEmail_errorMsg" class="p-error">
+          <span *ngIf="emailCtrl?.hasError('required')">{{ 'LOGIN.EMAIL_REQUIRED' | translate }}</span>
+          <span *ngIf="emailCtrl?.hasError('email')">{{ 'LOGIN.EMAIL_WRONG_FORMAT' | translate }}</span>
+          <span *ngIf="emailCtrl?.hasError('maxlength')">{{ 'LOGIN.EMAIL_TO_LONG' | translate }}</span>
+        </small>
+      </div>
+      <div class="inputCont">
+        <label for="loginPassword" class="label">{{ 'LOGIN.PASSWORD' | translate }}</label>
+
+        <div class="inputIconCont">
+          <input
+            (blur)="onBlur('password')"
+            type="password"
+            id="loginPassword"
+            maxlength="256"
+            formControlName="password"
+            placeholder="{{ 'LOGIN.PASSWORD' | translate }}"
+            class="inputIconField"
+            [showPassword]="showPassword"
+            [feedback]="false"
+            aria-describedby="loginPassword_errorMsg"
+            pPassword
+          />
+          <button type="button" class="inputIconBtn" (click)="showPassword = !showPassword" title="Show/hide password">
+            <i class="mdi" [class]="showPassword ? 'mdi-eye-off' : 'mdi-eye'"></i>
+          </button>
+        </div>
+        <small *ngIf="passCtrl?.invalid && (passCtrl?.dirty || passCtrl?.touched)" id="loginPassword_errorMsg" class="p-error">
+          <span *ngIf="passCtrl?.hasError('required')">{{ 'LOGIN.PASSWORD_REQUIRED' | translate }}</span>
+          <span *ngIf="passCtrl?.hasError('maxlength')">{{ 'LOGIN.PASSWORD_TO_LONG' | translate }}</span>
+        </small>
+      </div>
+      <div>
+        <button
+          [disabled]="isAuthenticating$ | async"
+          id="submitBtn"
+          name="submit"
+          type="submit"
+          class="button button_big button_block"
+        >
+          <span *ngIf="(isAuthenticating$ | async) === false">{{ 'LOGIN.SUBMIT_BUTTON' | translate }}</span>
+          <span *ngIf="isAuthenticating$ | async"><i class="mdi mdi-loading mdi-spin"></i></span>
+        </button>
+      </div>
+      <div class="loginFoot" style="display: none">
+        <div class="checkboxCont">
+          <p-checkbox
+            value="remember"
+            [(ngModel)]="remember"
+            [ngModelOptions]="{ standalone: true }"
+            inputId="loginRemember"
+          ></p-checkbox>
+          <label for="loginRemember" class="checkboxLabel">{{ 'LOGIN.REMEMBER_ME' | translate }}</label>
+        </div>
+        <button type="button" class="button button_small button_clear">{{ 'LOGIN.FORGOT_PASSWORD' | translate }}</button>
+      </div>
+    </form>
+  </main>
+</div>

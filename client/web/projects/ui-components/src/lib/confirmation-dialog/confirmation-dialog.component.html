@@ -1,0 +1,8 @@
+<div class="modalContent">
+  <p *ngIf="data.itemName" class="marginTop_0 colorTextLight"><i *ngIf="data.itemIcon" class="{{ 'mdi ' + data.itemIcon }} "></i> {{ data.itemName }}</p>
+  <p class="marginTop_0 marginBottom_2">{{ data.body }}</p>
+</div>
+<div class="modalFoot">
+  <button type="button" class="button button_outline" (click)="close(false)"><i *ngIf="data.cancelButtonIcon" class="{{ 'mdi ' + data.cancelButtonIcon }} "></i> {{ data.noLabel }}</button>
+  <button type="button" class="button button_colorDanger" (click)="close(true)"><i *ngIf="data.confirmButtonIcon" class="{{ 'mdi ' + data.confirmButtonIcon }} "></i> {{ data.yesLabel }}</button>
+</div>

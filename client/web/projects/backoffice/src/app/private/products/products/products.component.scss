@@ -1,0 +1,102 @@
+@import 'variables';
+
+.contentTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.createContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.checkboxContainer {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+.checkboxLabel {
+    padding: 0.7rem 1rem;
+    transition: border 200ms, color 200ms, background-color 200ms;
+}
+.checkboxLabel:hover, .checkboxLabel.active {
+    background-color: $colorMain;
+    border-color: $colorMain;
+    
+}
+
+.checkboxLabel:hover .checkboxLabel__title, .checkboxLabel.active .checkboxLabel__title {
+    color: #FFF;
+}
+
+@media screen and (max-width: $mediaqueryM) {
+    .searchContainer {
+        margin-top: 1rem;
+    }
+    .createContainer {
+        flex-direction: column;
+        width: 100%;
+    }
+    .checkboxLabel {
+        margin-right: 0;
+    }
+    .checkboxLabel:not(:last-of-type) {
+        border-bottom: none;
+    }
+    .checkboxLabel .checkboxContainer {
+        justify-content: flex-start;
+    }
+}
+
+/* ////////////////// Product List ///////////////// */
+
+.typeIcon {
+    margin-right: 0.5rem;
+}
+.statusIcon {
+    height: 0.375rem;
+    width: 0.375rem;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 0.125rem;
+    margin-right: 0.375rem;   
+}
+
+.statusActive {
+    background-color: $colorSuccess;
+}
+
+.statusInactive {
+    background-color: $colorDanger;
+}
+
+.progress-spinner {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  /* Transparent Overlay */
+  .progress-spinner:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.53);
+  }

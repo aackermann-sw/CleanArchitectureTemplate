@@ -1,0 +1,57 @@
+
+@import "variables.scss";
+
+/* //////////////////// Toast //////////////////// */
+
+:host ::ng-deep .p-toast .p-toast-message {
+  border: none;
+  border-radius: 0;
+
+  &.p-toast-message-info {
+    background: $colorInfo_altBkg;
+    color: $colorInfo_altText;
+
+    .p-toast-message-icon, .p-toast-icon-close {
+      color: $colorInfo_altText;
+    }
+  }
+  &.p-toast-message-success {
+    background: $colorSuccess_altBkg;
+    color: $colorSuccess_altText;
+
+    .p-toast-message-icon, .p-toast-icon-close {
+      color: $colorSuccess_altText;
+    }
+  }
+  &.p-toast-message-warning {
+    background: $colorWarning_altBkg;
+    color: $colorWarning_altText;
+
+    .p-toast-message-icon, .p-toast-icon-close {
+      color: $colorWarning_altText;
+    }
+  }
+  &.p-toast-message-error {
+    background: $colorDanger_altBkg;
+    color: $colorDanger_altText;
+
+    .p-toast-message-icon, .p-toast-icon-close {
+      color: $colorDanger_altText;
+    }
+  }
+}
+
+:host ::ng-deep .p-toast .p-toast-message .p-toast-message-content {
+  .p-toast-message-icon {
+    font-size: 1.5rem;
+  }
+  .p-toast-detail {
+    margin: .25rem 0 0 0;
+  }
+}
+
+:host ::ng-deep .p-toast .p-toast-message .p-toast-icon-close {
+  position: relative;
+  top: -.75rem;
+  right: -.75rem;
+}

@@ -1,0 +1,178 @@
+@import 'variables';
+
+///// Status /////
+
+.switchToggle {
+  margin-right: 2rem;
+}
+
+.statusTitle {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+.statusLabel {
+  display: inline-block;
+  min-width: 3.5rem;
+}
+
+///// Submit /////
+
+.submitBtn {
+  margin-right: 1.5rem;
+}
+
+///// Required instructions /////
+
+.requiredFieldsInstructions {
+  position: absolute;
+  bottom: -1.125rem;
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+///// Container /////
+
+p.oblique {
+  font-style: oblique;
+  font-size: small;
+  margin-right: 20px;
+}
+
+.productCont {
+  padding-top: 2rem;
+}
+
+///// Tooltip /////
+
+.toolTip {
+  display: flex;
+}
+
+.toolTip i {
+  position: relative;
+  top: -1px;
+  margin-left: 0.375rem;
+  font-size: 0.875rem;
+  color: $colorTextLight;
+}
+
+///// Type /////
+
+.optionsCont {
+  display: flex;
+  flex-direction: row;
+}
+
+.productTypeOption {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.productHelpText {
+  margin: 0.75rem 0 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: $colorTextLight;
+}
+
+///// Side section /////
+
+.sideSection {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  border: 1px solid $colorOutline;
+
+  &:not(:first-of-type) {
+    border-top: none;
+  }
+}
+
+///// Image Upload /////
+.fileUploadCont {
+  display: flex;
+  flex-direction: column;
+}
+.imgUpload {
+  display: flex;
+  align-items: center;
+}
+.fileUploadBtn {
+  align-self: flex-start;
+  border-color: $colorMain;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+.fileInfo__removeBtn {
+  margin-top: 0.75rem;
+}
+.sideSection__title {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.15rem;
+}
+.noFileSelected {
+  color: $colorTextLight;
+  font-size: 0.875rem;
+  margin-left: 1rem;
+}
+////// Img Miniature /////
+.imgMiniature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.imgData {
+  margin: 0 1rem;
+}
+.imgName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $colorText;
+  max-width: 20rem;
+}
+.imgSize {
+  font-size: 0.75rem;
+}
+
+///// Responsive /////
+
+@media screen and (max-width: $mediaqueryM) {
+  .switchToggle {
+    margin: 0 0 1rem 0;
+    padding: 0.5rem 0;
+  }
+
+  .submitBtn {
+    margin: 0 0 1rem 0;
+  }
+
+  .requiredFieldsInstructions {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  .optionsCont {
+    flex-direction: column;
+
+    .checkboxLabel {
+      margin: 0;
+      width: 100%;
+
+      &:not(:last-of-type) {
+        border-bottom: none;
+      }
+    }
+    .productTypeOption {
+      justify-content: flex-start;
+    }
+  }
+
+  .sideSection {
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  .imgName {
+    white-space: normal;
+  }
+}

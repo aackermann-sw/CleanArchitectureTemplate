@@ -1,0 +1,4 @@
+{
+  "apiIdentityUrl": "Identity API Url, with / at the end. (https://localhost:5001/)",
+  "apiEntitiesUrl": "Entities API Url, with / at the end. (https://localhost:5001/)"
+}

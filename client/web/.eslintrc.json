@@ -1,0 +1,73 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/node_modules/**", "node_modules/**", "**/test.ts", "**/polyfills.ts"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["projects/backoffice/tsconfig.app.json", "projects/backoffice/tsconfig.spec.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        // AirBnB Styleguide rules
+        "airbnb-typescript/base",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        /**
+         * Any TypeScript source code (NOT TEMPLATE) related rules you wish to use/reconfigure over and above the
+         * recommended set provided by the @angular-eslint project would go here.
+         */
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variable",
+            "format": ["strictCamelCase"],
+            "leadingUnderscore": "allow",
+            "trailingUnderscore": "forbid"
+          },
+          { "selector": "class", "format": ["PascalCase"] },
+          { "selector": "enum", "format": ["UPPER_CASE"] }
+        ],
+        "camelcase": "error",
+        "max-lines": ["error", 300],
+        "max-classes-per-file": "off",
+        "@typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+        "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+        "import/prefer-default-export": "off",
+        "class-methods-use-this": "off",
+        "import/no-extraneous-dependencies": ["warn", { "devDependencies": ["**/*.test.ts", "**/*.test.tsx"] }],
+        "no-unused-expressions": "error",
+        "no-underscore-dangle": "off",
+        "@angular-eslint/directive-selector": ["error", { "type": "attribute", "prefix": "cad", "style": "camelCase" }],
+        "@angular-eslint/component-selector": ["error", { "type": "element", "prefix": "cad", "style": "kebab-case" }]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        /**
+         * Any template/HTML related rules you wish to use/reconfigure over and above the
+         * recommended set provided by the @angular-eslint project would go here.
+         */
+      }
+    },
+    {
+      "files": ["src/**/*.spec.ts", "src/**/*.d.ts"],
+      "parserOptions": {
+        "project": "./src/tsconfig.spec.json"
+      },
+      // Jasmine rules
+      "extends": ["plugin:jasmine/recommended"],
+      // Plugin to run Jasmine rules
+      "plugins": ["jasmine"],
+      "env": { "jasmine": true },
+      // Turn off 'no-unused-vars' rule
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    }
+  ]
+}

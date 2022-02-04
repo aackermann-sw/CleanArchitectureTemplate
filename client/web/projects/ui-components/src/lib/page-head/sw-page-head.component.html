@@ -1,0 +1,52 @@
+<div class="pageHead" [ngClass]="{ pageHead_fixed: fixed }">
+  <div class="pageHeadContainer">
+    <div class="pageHeadRow">
+      <div class="pageHeadStartCol">
+        <div class="pageHeadTitleCont" *ngIf="title || subtitle">
+          <h2 class="pageHeadTitleWrap">
+            <span class="pageHeadSubtitle">
+              <i *ngIf="subtitleIcon" class="mdi {{ subtitleIcon }}"></i>
+              {{ subtitle }}
+            </span>
+            <span class="pageHeadTitle">
+              <span *ngIf="icon || editIconLabel" class="pageHeadIcon">
+                <i *ngIf="iconFormControl" class="mdi {{ iconFormControl.value }}"></i>
+                <i *ngIf="!iconFormControl" class="mdi {{ icon ? icon : 'mdi-cube' }}"></i>
+                <button type="button" *ngIf="editIconLabel" (click)="showHideEditIconDialog()" class="button pageHeadIcon__btn" title="{{ editIconLabel }}" [disabled]="iconFormControl.disabled"><i class="mdi mdi-pencil"></i></button>
+              </span>
+              <i class="mdi mdi-file-document-outline pageHeadTitle__icon"></i>
+              {{ title }}
+            </span>
+          </h2>
+          <div *ngIf="inputLabel" class="pageHeadInputCont">
+            <label for="pageHeadInput" class="srOnly">{{ inputLabel }}</label>
+            <input [formControl]="inputFormControl" type="text" id="pageHeadInput" placeholder="{{ inputLabel }}" class="input pageHeadInput" aria-describedby="pageHeadInput_errorMsg" pInputText (blur)="onInputBlur()"/>
+            <small *ngIf="inputFormControl && inputFormControl.dirty && inputFormControl.invalid" id="pageHeadInput_errorMsg" class="p-error p-error_tooltip">
+              <span *ngIf="inputFormControl.hasError('required')">{{ inputRequiredErrorText }}</span>
+              <span *ngIf="inputFormControl.hasError('spacesOnly')">{{ inputFormatErrorText }}</span>
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="pageHeadEndCol">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="fixed" class="pageHeadFixedPadding" [ngClass]="{'pageHeadFixedPadding_input': inputLabel}"></div>
+
+<p-dialog *ngIf="editIconLabel" header="{{ editIconModalTitle }}" [(visible)]="editIconDialogVisibility" [modal]="true" [draggable]="false" [resizable]="false">
+  <form [formGroup]="dialogForm">
+    <ul class="iconPickerList">
+      <li class="iconPickerItem" *ngFor="let iconName of iconList; let i = index">
+        <input id="iconOption{{ i }}" type="radio" name="iconDialog" class="button button_outline" value="{{ iconName }}" formControlName="iconDialog">
+        <i class="mdi {{ iconName }}"></i>
+      </li>
+    </ul>
+    <div class="modalFoot modalFoot_sticky">
+      <button type="button" id="dialogCancel" class="button button_outline" (click)="showHideEditIconDialog()">{{ editIconModalCancelText }}</button>
+      <button type="button" id="dialogConfirm" class="button button_colorSuccess" (click)="confirmIcon()"><i class="mdi mdi-check"></i>{{ editIconModalConfirmText }}</button>
+    </div>
+  </form>
+</p-dialog>

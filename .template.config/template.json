@@ -1,0 +1,15 @@
+{
+"$schema": "http://json.schemastore.org/template",
+"author": "Agustin Ackermann",
+"classifications": [
+"cleanarch","clean architecture","solution","ddd","Switch","solid","onion","hexagonal","angular"
+],
+"tags": {
+"language": "C#"
+},
+"identity": "Clean.Architecture",
+"name": "Agustin Ackermann (@Switch) Clean Architecture",
+"shortName": "sw-clean-arch",
+"sourceName": "Clean.Architecture",
+"preferNameDirectory": true
+}

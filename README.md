@@ -1,1 +1,4 @@
-# CleanArchitectureTemplate
+-- RUN
+
+
+docker-compose up -d

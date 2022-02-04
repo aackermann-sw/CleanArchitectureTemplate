@@ -1,0 +1,33 @@
+/* ////////////////////////////// Fonts ////////////////////////////// */
+
+/* Heebo */
+@font-face {
+  font-family: 'Heebo';
+  src: url('../fonts/heebo-regular.woff2') format('woff2'), url('../fonts/heebo-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Heebo';
+  src: url('../fonts/heebo-bold.woff2') format('woff2'), url('../fonts/heebo-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Overpass */
+@font-face {
+  font-family: 'Overpass';
+  src: url('../fonts/overpass-black.woff2') format('woff2'), url('../fonts/overpass-black.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Overpass';
+  src: url('../fonts/overpass-light.woff2') format('woff2'), url('../fonts/overpass-light.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+  font-display: swap;
+}

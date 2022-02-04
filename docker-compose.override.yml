@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  server-db-data:
+    ports:
+      - 3706:3306
+    volumes:
+      - db-data:/var/lib/mysql
+
+  tsp-redis:
+    container_name: tsp-redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redis-data:/data
+      
+volumes:
+  db-data: {}
+  data01: {}
+  redis-data: {}

@@ -1,0 +1,135 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+.errorContainer {
+    background-color: #031640;
+    background-image: url('../../../assets/images/pictures/globe.png');
+    background-repeat: no-repeat;
+    background-position: calc(100% + 960px);
+    overflow: hidden;
+}
+
+.errorHeader {
+    transition: all 0.2s ease;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(150, 203, 255, 0.3); 
+}
+
+.errorHeaderLogoCont {
+    padding: 0.25rem 0;
+}
+
+.errorHeaderLogo {
+    height: 4rem;
+}
+
+.backgroundImage {
+    position: absolute;
+    top: -70%;
+    left: 50%;
+    overflow: hidden;
+}
+
+.errorTitles, .errorContent {
+    display: flex;
+    justify-content: center;
+}
+
+.errorTitles {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.errorContent {
+    background-color: #FFFFFF;
+    padding: 3rem 0;
+}
+
+.errorTextCont {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Overpass';
+    font-weight: bold;
+}
+
+.subTitle {
+    font-size: 3rem;
+    color: #96CBFF;
+}
+
+.mainTitle {
+    font-size: 4rem;
+    color: #FFF;
+    margin-top: 1rem;
+}
+
+.errorContentContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.errorMsg {
+    padding: 0;
+    line-height: 1.5rem;
+}
+
+.errorButtons {
+    padding-top: 2rem;
+}
+
+.button {
+    padding: 0.5rem 2rem;
+    background-color: #FFF;
+    color: #031640;
+    margin-right: 1.5rem;
+}
+
+.button:hover {
+    background-color: #031640;
+    border-color: #031640;
+    color: #FFF;
+}
+
+.errorFooter {
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footerText {
+    font-size: 0.75rem;
+    color: #031640;
+}
+
+@media (max-width: 991px) {
+    .errorContainer {
+        background-position: calc(100% + 1240px);
+    }
+    .errorTitles {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .subTitle {
+        font-size: 2rem;
+    }
+    .mainTitle {
+        font-size: 3rem;
+    }
+    .errorContent {
+        padding: 1.5rem 0;
+    }
+    .errorButtons {
+        display: flex;
+        flex-direction: column;
+    }
+    .button {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
