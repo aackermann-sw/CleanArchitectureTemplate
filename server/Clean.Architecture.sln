@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30002.166
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Application", "CustomerService.Application\Clean.Architecture.Application.csproj", "{B47C00AE-2A24-46BA-BEFF-89213698A0DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Application", "Clean.Architecture.Application\Clean.Architecture.Application.csproj", "{B47C00AE-2A24-46BA-BEFF-89213698A0DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4F68612B-FAEF-48E1-826A-3EC63FB7709B}"
 EndProject
@@ -18,19 +18,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{D98D19
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1CC56DA0-5B2D-44A1-9BC1-C7F817C510BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Domain", "CustomerService.Domain\Clean.Architecture.Domain.csproj", "{B465DBDB-FA15-475E-999B-B68C7A1041F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Domain", "Clean.Architecture.Domain\Clean.Architecture.Domain.csproj", "{B465DBDB-FA15-475E-999B-B68C7A1041F3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Infrastructure.Persistence", "CustomerService.Infrastructure.Persistence\Clean.Architecture.Infrastructure.Persistence.csproj", "{F52FD1E4-2442-4C86-A870-BEF628721C60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Infrastructure.Persistence", "Clean.Architecture.Infrastructure.Persistence\Clean.Architecture.Infrastructure.Persistence.csproj", "{F52FD1E4-2442-4C86-A870-BEF628721C60}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Infrastructure.Shared", "CustomerService.Infrastructure.Shared\Clean.Architecture.Infrastructure.Shared.csproj", "{A8C80B26-C9DD-459C-A9CB-7F570074F3FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Infrastructure.Shared", "Clean.Architecture.Infrastructure.Shared\Clean.Architecture.Infrastructure.Shared.csproj", "{A8C80B26-C9DD-459C-A9CB-7F570074F3FE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.PublicAPI", "CustomerService.PublicAPI\Clean.Architecture.PublicAPI.csproj", "{880317E7-0B61-4477-AAF2-CDF8D3C75331}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.PublicAPI", "Clean.Architecture.PublicAPI\Clean.Architecture.PublicAPI.csproj", "{880317E7-0B61-4477-AAF2-CDF8D3C75331}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Infrastructure.Redis", "Clean.Architecture.Infrastructure.Redis\Clean.Architecture.Infrastructure.Redis.csproj", "{F1C02DA0-873D-48A7-BD56-0E6CBAB080D7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{BAB81EDB-197C-4572-ABF5-4052C4B6AEF9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Application.Test", "Clean.Architecture.Application.Test\Clean.Architecture.Application.Test.csproj", "{298F9EDA-BA7F-45AE-AE36-26CC10854B8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Application.Test", "Clean.Architecture.Tests\Clean.Architecture.Application.Test\Clean.Architecture.Application.Test.csproj", "{DEA363EE-8E0F-4ECF-B921-5755E1277A2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,10 +62,10 @@ Global
 		{F1C02DA0-873D-48A7-BD56-0E6CBAB080D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1C02DA0-873D-48A7-BD56-0E6CBAB080D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1C02DA0-873D-48A7-BD56-0E6CBAB080D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{298F9EDA-BA7F-45AE-AE36-26CC10854B8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{298F9EDA-BA7F-45AE-AE36-26CC10854B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{298F9EDA-BA7F-45AE-AE36-26CC10854B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{298F9EDA-BA7F-45AE-AE36-26CC10854B8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA363EE-8E0F-4ECF-B921-5755E1277A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA363EE-8E0F-4ECF-B921-5755E1277A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA363EE-8E0F-4ECF-B921-5755E1277A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA363EE-8E0F-4ECF-B921-5755E1277A2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,43 +80,9 @@ Global
 		{880317E7-0B61-4477-AAF2-CDF8D3C75331} = {D98D19B9-7DE0-4304-8F6C-7D54A86E2BFC}
 		{F1C02DA0-873D-48A7-BD56-0E6CBAB080D7} = {79415484-52E5-4602-A74E-15E16B1E9363}
 		{BAB81EDB-197C-4572-ABF5-4052C4B6AEF9} = {1CC56DA0-5B2D-44A1-9BC1-C7F817C510BD}
-		{298F9EDA-BA7F-45AE-AE36-26CC10854B8F} = {BAB81EDB-197C-4572-ABF5-4052C4B6AEF9}
+		{DEA363EE-8E0F-4ECF-B921-5755E1277A2A} = {BAB81EDB-197C-4572-ABF5-4052C4B6AEF9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B051C5E6-3903-45C8-8524-DB878ADA5297}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dev.azure.com/dev30071
-		SccProjectUniqueName0 = CustomerService.Application\\Clean.Architecture.Application.csproj
-		SccProjectTopLevelParentUniqueName0 = Clean.Architecture.sln
-		SccProjectName0 = CustomerService.Application
-		SccLocalPath0 = CustomerService.Application
-		SccLocalPath1 = .
-		SccProjectUniqueName2 = CustomerService.Domain\\Clean.Architecture.Domain.csproj
-		SccProjectTopLevelParentUniqueName2 = Clean.Architecture.sln
-		SccProjectName2 = CustomerService.Domain
-		SccLocalPath2 = CustomerService.Domain
-		SccProjectUniqueName3 = CustomerService.Infrastructure.Persistence\\Clean.Architecture.Infrastructure.Persistence.csproj
-		SccProjectTopLevelParentUniqueName3 = Clean.Architecture.sln
-		SccProjectName3 = CustomerService.Infrastructure.Persistence
-		SccLocalPath3 = CustomerService.Infrastructure.Persistence
-		SccProjectUniqueName4 = CustomerService.Infrastructure.Shared\\Clean.Architecture.Infrastructure.Shared.csproj
-		SccProjectTopLevelParentUniqueName4 = Clean.Architecture.sln
-		SccProjectName4 = CustomerService.Infrastructure.Shared
-		SccLocalPath4 = CustomerService.Infrastructure.Shared
-		SccProjectUniqueName5 = CustomerService.PublicAPI\\Clean.Architecture.PublicAPI.csproj
-		SccProjectTopLevelParentUniqueName5 = Clean.Architecture.sln
-		SccProjectName5 = CustomerService.PublicAPI
-		SccLocalPath5 = CustomerService.PublicAPI
-		SccProjectUniqueName6 = Clean.Architecture.Application.Test\\Clean.Architecture.Application.Test.csproj
-		SccProjectTopLevelParentUniqueName6 = Clean.Architecture.sln
-		SccProjectName6 = Clean.Architecture.Application.Test
-		SccLocalPath6 = Clean.Architecture.Application.Test
-		SccProjectUniqueName7 = Clean.Architecture.Infrastructure.Redis\\Clean.Architecture.Infrastructure.Redis.csproj
-		SccProjectTopLevelParentUniqueName7 = Clean.Architecture.sln
-		SccProjectName7 = Clean.Architecture.Infrastructure.Redis
-		SccLocalPath7 = Clean.Architecture.Infrastructure.Redis
 	EndGlobalSection
 EndGlobal

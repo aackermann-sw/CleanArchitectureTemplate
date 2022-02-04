@@ -4,7 +4,7 @@
 
 using System;
 
-namespace Tsp.CustomerService.Infrastructure.Redis.Entities
+namespace Clean.Architecture.Infrastructure.Redis.Entities
 {
     internal record RedisOptions
     {

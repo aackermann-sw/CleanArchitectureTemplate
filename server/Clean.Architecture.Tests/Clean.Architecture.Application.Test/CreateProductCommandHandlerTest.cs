@@ -2,15 +2,15 @@ using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Threading.Tasks;
-using Tsp.CustomerService.Application.Features.Products.Commands.Create;
-using Tsp.CustomerService.Application.Interfaces.Repositories;
-using Tsp.CustomerService.Application.Mappings;
-using Tsp.CustomerService.Application.Test.Config;
-using Tsp.CustomerService.Domain.Entities;
-using Tsp.CustomerService.Infrastructure.Persistence.Repositories;
-using Tsp.CustomerService.Infrastructure.Shared.Services;
+using Clean.Architecture.Application.Features.Products.Commands.Create;
+using Clean.Architecture.Application.Interfaces.Repositories;
+using Clean.Architecture.Application.Mappings;
+using Clean.Architecture.Application.Test.Config;
+using Clean.Architecture.Domain.Entities;
+using Clean.Architecture.Infrastructure.Persistence.Repositories;
+using Clean.Architecture.Infrastructure.Shared.Services;
 
-namespace Tsp.CustomerService.Application.Test
+namespace Clean.Architecture.Application.Test
 {
 
     [TestClass]

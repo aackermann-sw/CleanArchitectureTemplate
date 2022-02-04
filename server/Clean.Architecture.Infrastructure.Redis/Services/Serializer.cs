@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tsp.CustomerService.Infrastructure.Redis.Services
+namespace Clean.Architecture.Infrastructure.Redis.Services
 {
     internal class Serializer : ISerializer
     {

@@ -1,10 +1,10 @@
-﻿using Tsp.CustomerService.Infrastructure.Redis.Entities;
+﻿using Clean.Architecture.Infrastructure.Redis.Entities;
 using Microsoft.Extensions.Options;
 using StackExchange.Redis;
 using System;
 using System.Net;
 
-namespace Tsp.CustomerService.Infrastructure.Redis.Services
+namespace Clean.Architecture.Infrastructure.Redis.Services
 {
     /// <summary>
     /// Redis işlevlerini sağlayan servis.

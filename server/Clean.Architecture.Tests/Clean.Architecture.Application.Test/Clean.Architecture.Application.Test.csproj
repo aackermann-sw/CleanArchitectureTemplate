@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup Label="Globals">
-    <SccProjectName>%24/ArquitecturaSiges/tsp/server/Tsp.CustomerService.Application.Test</SccProjectName>
+    <SccProjectName>%24/ArquitecturaSiges/tsp/server/Clean.Architecture.Application.Test</SccProjectName>
     <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
     <SccAuxPath>https://dev.azure.com/dev30071</SccAuxPath>
     <SccLocalPath>.</SccLocalPath>
@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomerService.Infrastructure.Persistence\Tsp.CustomerService.Infrastructure.Persistence.csproj" />
-    <ProjectReference Include="..\CustomerService.Infrastructure.Shared\Tsp.CustomerService.Infrastructure.Shared.csproj" />
+    <ProjectReference Include="..\..\Clean.Architecture.Infrastructure.Persistence\Clean.Architecture.Infrastructure.Persistence.csproj" />
+    <ProjectReference Include="..\..\Clean.Architecture.Infrastructure.Shared\Clean.Architecture.Infrastructure.Shared.csproj" />
   </ItemGroup>
 
 </Project>

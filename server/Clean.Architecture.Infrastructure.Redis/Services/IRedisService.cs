@@ -4,7 +4,7 @@
 
 using System;
 
-namespace Tsp.CustomerService.Infrastructure.Redis.Services
+namespace Clean.Architecture.Infrastructure.Redis.Services
 {
     /// <summary>
     /// Redis servisinin tanımını içeren arabirim.

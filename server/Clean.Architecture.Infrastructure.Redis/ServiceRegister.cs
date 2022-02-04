@@ -1,10 +1,10 @@
-﻿using Tsp.CustomerService.Infrastructure.Redis.Entities;
-using Tsp.CustomerService.Infrastructure.Redis.Services;
+﻿using Clean.Architecture.Infrastructure.Redis.Entities;
+using Clean.Architecture.Infrastructure.Redis.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 
-namespace Tsp.CustomerService.Infrastructure.Redis
+namespace Clean.Architecture.Infrastructure.Redis
 {
     /// <summary>
     /// Redis önbellek mekanizması için genişletme metotlarını barındırır.

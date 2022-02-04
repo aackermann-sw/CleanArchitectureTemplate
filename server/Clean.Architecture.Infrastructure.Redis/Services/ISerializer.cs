@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tsp.CustomerService.Infrastructure.Redis.Services
+namespace Clean.Architecture.Infrastructure.Redis.Services
 {
 
     public interface ISerializer

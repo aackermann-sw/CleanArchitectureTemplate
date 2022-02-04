@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tsp.CustomerService.Infrastructure.Persistence.Contexts;
+using Clean.Architecture.Infrastructure.Persistence.Contexts;
 
-namespace Tsp.CustomerService.Application.Test.Config
+namespace Clean.Architecture.Application.Test.Config
 {
     public static class ApplicationDbContextInMemory
     {
