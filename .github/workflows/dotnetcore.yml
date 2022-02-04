@@ -18,6 +18,6 @@ jobs:
       with:
         dotnet-version: 5.0.201
     - name: Build with dotnet
-      run: dotnet build --configuration Release
+      run: dotnet build ./server/Clean.Architecture.sln --configuration Release
     - name: Test with dotnet
       run: dotnet test ./server/Clean.Architecture.sln --configuration Release
