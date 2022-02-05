@@ -1,7 +1,7 @@
 {
-    "name": "tsp Advisors",
-    "short_name": "tsp",
-    "description": "A Boutique M&A advisory firm tailored to the logistics industry and the people who built it.",
+    "name": "clean.architecture",
+    "short_name": "clean.architecture",
+    "description": "clean architecture template",
     "icons": [
         {
             "src": "/android-chrome-192x192.png?v=2",
