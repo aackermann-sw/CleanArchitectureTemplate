@@ -9,7 +9,7 @@ namespace Clean.Architecture.Infrastructure.Shared.Extensions
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/V1/swagger.json", "TSP - Customer Services");
+                options.SwaggerEndpoint("/swagger/V1/swagger.json", "Api Services");
                 options.RoutePrefix = "swagger";
                 options.DisplayRequestDuration();
             });

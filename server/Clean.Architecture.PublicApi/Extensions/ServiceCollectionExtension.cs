@@ -77,7 +77,7 @@ namespace Clean.Architecture.PublicAPI.Extensions
                 c.SwaggerDoc("V1", new OpenApiInfo
                 {
                     Version = "V1",
-                    Title = "TSP - Public WebAPI"
+                    Title = "Public WebAPI"
                 });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {

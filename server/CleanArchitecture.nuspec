@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>3ce9988f-b03f-4000-b1c5-2ddd0f32c6a6</id>
+    <id>Switch-Software-CleanArchitecture-Template</id>
     <title>Switch.CleanArchitecture.Template</title>
-    <version>2.0.0</version>
+    <version>1.0.0</version>
     <authors>Agustin Ackermann</authors>
     <description>
       .NET Core template using CleanArchitecture.

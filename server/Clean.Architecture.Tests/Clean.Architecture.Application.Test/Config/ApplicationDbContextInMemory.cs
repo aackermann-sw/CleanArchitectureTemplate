@@ -13,7 +13,7 @@ namespace Clean.Architecture.Application.Test.Config
         public static ApplicationContext Get()
         {
             var options = new DbContextOptionsBuilder<ApplicationContext>()
-                .UseInMemoryDatabase(databaseName: $"TspTestdb")
+                .UseInMemoryDatabase(databaseName: $"Testdb")
                 .Options;
 
             return new ApplicationContext(options, null, null);
