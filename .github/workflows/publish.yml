@@ -14,7 +14,7 @@ jobs:
 
       - uses: nuget/setup-nuget@v1
         with:
-          nuget-version: '1.x'
+          nuget-version: '1.0.1'
           
       - name: Package the template
         run: nuget pack CleanArchitecture.nuspec
