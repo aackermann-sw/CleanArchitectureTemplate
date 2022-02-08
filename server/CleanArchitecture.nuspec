@@ -3,7 +3,7 @@
   <metadata>
     <id>Switch-Software-CleanArchitecture-Template</id>
     <title>Switch.CleanArchitecture.Template</title>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <authors>Agustin Ackermann</authors>
     <description>
       .NET Core template using CleanArchitecture.

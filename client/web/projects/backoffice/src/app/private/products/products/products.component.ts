@@ -98,6 +98,9 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
   private _matchesPattern(product: IProduct, description: string): boolean {
+    if(product.description == undefined)
+      return true;
+
     const descriptionP = product.description.toLowerCase();
     const descriptionI = description.toLowerCase();
     return descriptionP.includes(descriptionI);
