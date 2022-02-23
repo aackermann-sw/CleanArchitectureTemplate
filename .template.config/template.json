@@ -1,15 +1,67 @@
 {
-"$schema": "http://json.schemastore.org/template",
-"author": "Agustin Ackermann",
-"classifications": [
-"cleanarch","clean architecture","solution","ddd","Switch","solid","onion","hexagonal","angular"
-],
-"tags": {
-"language": "C#"
-},
-"identity": "Clean.Architecture",
-"name": "Agustin Ackermann (@Switch) Clean Architecture",
-"shortName": "sw-clean-arch",
-"sourceName": "Clean.Architecture",
-"preferNameDirectory": true
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Agustin Ackermann",
+  "classifications": [
+    "cleanarch",
+    "clean architecture",
+    "solution",
+    "ddd",
+    "Switch",
+    "solid",
+    "onion",
+    "hexagonal",
+    "angular"
+  ],
+  "tags": {
+    "language": "C#"
+  },
+  "identity": "Clean.Architecture",
+  "name": "(@Switch) Clean Architecture",
+  "shortName": "sw-clean-arch",
+  "sourceName": "Clean.Architecture",
+  "preferNameDirectory": true,
+  "symbols": {
+    "EnableSwaggerSupport": {
+      "type": "parameter",
+      "description": "Enable swagger",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
+    "EnableRedisSupport": {
+      "type": "parameter",
+      "description": "Enable redis",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
+    "EnableMysqlSupport": {
+      "type": "parameter",
+      "description": "Enable Mysql",
+      "datatype": "bool",
+      "defaultValue": "false"
+    },
+    "EnableKibanaSupport": {
+      "type": "parameter",
+      "description": "Enable Kibana",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
+    "IncludeDevAppSettings": {
+      "type": "parameter",
+      "description": "Include appsettings.Development.json",
+      "datatype": "bool",
+      "defaultValue": "true"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!IncludeDevAppSettings)",
+          "exclude": [
+            "appsettings.Development.json"
+          ]
+        }
+      ]
+    }
+  ]
 }

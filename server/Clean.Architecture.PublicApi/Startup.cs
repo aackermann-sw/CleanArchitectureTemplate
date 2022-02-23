@@ -33,14 +33,18 @@ namespace Clean.Architecture.PublicAPI
             services.AddBehaviors();
             services.AddSharedInfrastructure(_configuration);
             services.AddApiVersioningExtension();
+#if (EnableSwaggerSupport)
             services.AddSwaggerService();
+#endif
             services.AddControllers();
             services.AddPersistenceInfrastructureForApi(_configuration);
             services.AddHttpContextAccessor();
             //For In-Memory Caching
             services.AddMemoryCache();
             services.AddScoped<IAuthenticatedUserService, AuthenticatedUserService>();
+            #if (EnableKibanaSupport)
             services.AddElasticSearchService(_configuration);
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +60,9 @@ namespace Clean.Architecture.PublicAPI
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+#if (EnableSwaggerSupport)
             app.UseSwaggerService();
+#endif
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

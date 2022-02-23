@@ -37,13 +37,20 @@ namespace Clean.Architecture.Infrastructure.Persistence.Extensions
         }
         private static void AddPersistenceContexts(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<IdentityContext>(options => options.UseMySQL(configuration.GetConnectionString("DefaultConnection")));
+            
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = true;
                 options.Password.RequireNonAlphanumeric = false;
             }).AddEntityFrameworkStores<IdentityContext>().AddDefaultUI().AddDefaultTokenProviders();
+#if (EnableMysqlSupport)
+            services.AddDbContext<IdentityContext>(options => options.UseMySQL (configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<ApplicationContext>(options => options.UseMySQL( configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+#endif
+#if (!EnableMysqlSupport)
+            services.AddDbContext<IdentityContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer( configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+#endif
         }
     }
 }

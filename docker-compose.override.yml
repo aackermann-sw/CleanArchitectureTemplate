@@ -2,19 +2,31 @@ version: "3.7"
 
 services:
   server-db-data:
+#if (!EnableMysqlSupport)
+    ports:
+      - 1433:1433
+    volumes:
+      - db-data:/var/opt/mssql
+#endif  
+#if (EnableMysqlSupport)
     ports:
       - 3706:3306
     volumes:
       - db-data:/var/lib/mysql
+#endif
 
-  tsp-redis:
-    container_name: tsp-redis
+#if (EnableRedisSupport)
+  Clean.Architecture-redis:
+    container_name: Clean.Architecture-redis
     ports:
       - 6379:6379
     volumes:
       - redis-data:/data
-      
+#endif
+
 volumes:
   db-data: {}
   data01: {}
+#if (EnableRedisSupport)
   redis-data: {}
+#endif

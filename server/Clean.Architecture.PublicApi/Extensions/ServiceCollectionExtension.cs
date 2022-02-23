@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using Serilog;
 using System.Reflection;
+#if (EnableKibanaSupport)
 using Serilog.Sinks.Elasticsearch;
+#endif
 using Microsoft.AspNetCore.Builder;
 using Clean.Architecture.PublicAPI.Middlewares;
 
@@ -51,7 +53,7 @@ namespace Clean.Architecture.PublicAPI.Extensions
                 );
             });
         }
-
+        #if (EnableKibanaSupport)
         public static void AddElasticSearchService(this IServiceCollection services, IConfiguration _configuration) {
 
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -68,7 +70,9 @@ namespace Clean.Architecture.PublicAPI.Extensions
                 .ReadFrom.Configuration(_configuration)
                 .CreateLogger();
         }
+#endif
 
+        #if (EnableSwaggerSupport)
         public static void AddSwaggerService(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
@@ -106,6 +110,7 @@ namespace Clean.Architecture.PublicAPI.Extensions
                 });
             });
         }
+#endif
 
         public static void UseExceptionHandlingMiddleware(this IApplicationBuilder app)
         {

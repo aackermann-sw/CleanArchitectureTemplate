@@ -2,6 +2,7 @@ version: "3.7"
 
 services:
   server-db-data:
+#if (EnableMysqlSupport)
     image: mysql:5.7
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE_DATA}
@@ -15,10 +16,20 @@ services:
       timeout: 30s
       retries: 10
       start_period: 10s
+#endif
+#if (!EnableMysqlSupport)
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    environment:
+      - TZ=America/Montevideo
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${SQL_SA_PASSWORD}
+      - MSSQL_PID=Express
+#endif
     networks:
       - backend
       
-  tsp-redis:
+@*#if (EnableRedisSupport)
+  Clean.Architecture-redis:
     image: redis:6.2.6-alpine
     healthcheck:
       test: redis-cli -h 127.0.0.1
@@ -27,9 +38,11 @@ services:
       retries: 5
     networks:
       - backend
+#endif*@
 
-  tsp-elasticsearch:
-    container_name: tsp-elasticsearch
+@*#if (EnableKibanaSupport)
+  Clean.Architecture-elasticsearch:
+    container_name: Clean.Architecture-elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:7.14.1
     environment:
       - discovery.type=single-node
@@ -46,19 +59,19 @@ services:
     networks:
       - backend
       
-  tsp-kibana:
-    container_name: tsp-kibana
+  Clean.Architecture-kibana:
+    container_name: Clean.Architecture-kibana
     image: docker.elastic.co/kibana/kibana:7.14.1
     environment:
-      - ELASTICSEARCH_URL=http://tsp-elasticsearch:9200
-      - ELASTICSEARCH_HOSTS=http://tsp-elasticsearch:9200
+      - ELASTICSEARCH_URL=http://Clean.Architecture-elasticsearch:9200
+      - ELASTICSEARCH_HOSTS=http://Clean.Architecture-elasticsearch:9200
     networks:
       - backend
     depends_on:
-      - tsp-elasticsearch
+      - Clean.Architecture-elasticsearch
     ports:
       - 5601:5601
-      
+#endif*@
 
 volumes:
   databases:

@@ -25,13 +25,19 @@ namespace Clean.Architecture.Infrastructure.Persistence.Extensions
     {
         public static void AddPersistenceInfrastructureForApi(this IServiceCollection services, IConfiguration configuration)
         {
+#if (EnableMysqlSupport)
             services.AddDbContext<IdentityContext>(options => options.UseMySQL(configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
             services.AddDbContext<ApplicationContext>(options => options.UseMySQL(configuration.GetConnectionString("DefaultConnection"),b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+#endif
+#if (!EnableMysqlSupport)
+            services.AddDbContext<IdentityContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),b => b.MigrationsAssembly(typeof(ApplicationContext).Assembly.FullName)));
+#endif
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
             services.AddRepositories();
-            #region Services
+#region Services
             services.AddTransient<IAccountService, AccountService>();
-            #endregion
+#endregion
             services.Configure<JWTConfiguration>(configuration.GetSection("JWTConfiguration"));
             services.AddAuthentication(options =>
             {
