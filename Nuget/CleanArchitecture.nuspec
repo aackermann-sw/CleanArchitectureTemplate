@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Switch-Software-CleanArchitecture-Template-NETCore</id>
-    <title>Switch.CleanArchitecture.Template.NetCore</title>
-    <version>1.0.0</version>
+    <id>Switch-Boilerplate-Template-NetCore</id>
+    <title>Switch-Boilerplate-Template-NetCore</title>
+    <version>0.1.2</version>
     <authors>Switch Software</authors>
     <description>
       .NET Core template using CleanArchitecture.

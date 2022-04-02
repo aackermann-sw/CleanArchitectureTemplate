@@ -1,0 +1,3 @@
+nuget.exe pack CleanArchitecture.nuspec
+echo End...
+pause

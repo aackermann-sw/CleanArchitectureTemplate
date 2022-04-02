@@ -9,15 +9,14 @@
     "Switch",
     "solid",
     "onion",
-    "hexagonal",
-    "angular"
+    "hexagonal"
   ],
   "tags": {
     "language": "C#"
   },
-  "identity": "Clean.Architecture",
-  "name": "(@Switch) Clean Architecture",
-  "shortName": "sw-clean-arch",
+  "identity": "Switch-Boilerplate-Template-NetCore",
+  "name": "(@Switch) Clean Architecture NetCore",
+  "shortName": "sw-webapi",
   "sourceName": "Clean.Architecture",
   "preferNameDirectory": true,
   "symbols": {
